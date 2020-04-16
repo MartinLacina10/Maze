@@ -1,0 +1,87 @@
+html {
+    font-family: Arial, Tahoma, Verdana, Segoe, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ovladani {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;
+    font-size: 2em;
+    text-shadow: 0px 0px 5px white;
+    cursor: pointer;
+}
+
+
+#deska {
+    width: 80vh;
+    height: 80vh;
+    background-image: url("trava.png");
+    background-repeat: repeat;
+    position: relative;
+}
+
+#deska h1 {
+    display: none;
+    color: white;
+    text-align: center;
+}
+
+
+#deska.vitezstvi > div {
+    display: none;
+}
+
+#deska.vitezstvi {
+    background-image: url("poklad.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+
+.figurka-1,
+.figurka-2,
+.figurka-3 {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    transition: 2s left, 2s top;
+}
+
+.figurka-1 {
+    background-image: url("krovi.png");
+}
+
+.figurka-2 {
+    background-image: url("poklad.svg");
+}
+
+.figurka-3 {
+    background-image: url("hrac.png");
+}
+
+
+#deska {
+    transform: perspective(100vh) rotateX(45deg);
+}
+
+.figurka-1,
+.figurka-2,
+.figurka-3 {
+    transform: rotateX(-45deg) scaleY(2) translateY(-25%);
+}
